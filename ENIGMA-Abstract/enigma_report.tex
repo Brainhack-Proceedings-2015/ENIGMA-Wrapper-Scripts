@@ -1,0 +1,344 @@
+%% BioMed_Central_Tex_Template_v1.06
+%%                                      %
+%  bmc_article.tex            ver: 1.06 %
+%                                       %
+
+%%IMPORTANT: do not delete the first line of this template
+%%It must be present to enable the BMC Submission system to
+%%recognise this template!!
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                     %%
+%%  LaTeX template for BioMed Central  %%
+%%     journal article submissions     %%
+%%                                     %%
+%%          <8 June 2012>              %%
+%%                                     %%
+%%                                     %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                                                 %%
+%% For instructions on how to fill out this Tex template           %%
+%% document please refer to Readme.html and the instructions for   %%
+%% authors page on the biomed central website                      %%
+%% http://www.biomedcentral.com/info/authors/                      %%
+%%                                                                 %%
+%% Please do not use \input{...} to include other tex files.       %%
+%% Submit your LaTeX manuscript as one .tex document.              %%
+%%                                                                 %%
+%% All additional figures and files should be attached             %%
+%% separately and not embedded in the \TeX\ document itself.       %%
+%%                                                                 %%
+%% BioMed Central currently use the MikTex distribution of         %%
+%% TeX for Windows) of TeX and LaTeX.  This is available from      %%
+%% http://www.miktex.org                                           %%
+%%                                                                 %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%% additional documentclass options:
+%  [doublespacing]
+%  [linenumbers]   - put the line numbers on margins
+
+%%% loading packages, author definitions
+
+\documentclass[twocolumn]{bmcart}% uncomment this for twocolumn layout and comment line below
+%\documentclass{bmcart}
+
+%%% Load packages
+\usepackage{amsthm,amsmath}
+\usepackage{siunitx}
+\usepackage{mfirstuc}
+%\RequirePackage{natbib}
+\usepackage[colorinlistoftodos]{todonotes}
+\RequirePackage{hyperref}
+\usepackage[utf8]{inputenc} %unicode support
+%\usepackage[applemac]{inputenc} %applemac support if unicode package fails
+%\usepackage[latin1]{inputenc} %UNIX support if unicode package fails
+\usepackage[htt]{hyphenat}
+
+\usepackage{array}
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                             %%
+%%  If you wish to display your graphics for   %%
+%%  your own use using includegraphic or       %%
+%%  includegraphics, then comment out the      %%
+%%  following two lines of code.               %%
+%%  NB: These line *must* be included when     %%
+%%  submitting to BMC.                         %%
+%%  All figure files must be submitted as      %%
+%%  separate graphics through the BMC          %%
+%%  submission process, not included in the    %%
+%%  submitted article.                         %%
+%%                                             %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%\def\includegraphic{}
+%\def\includegraphics{}
+
+%%% Put your definitions there:
+\startlocaldefs
+\endlocaldefs
+
+
+%%% Begin ...
+\begin{document}
+
+%%% Start of article front matter
+\begin{frontmatter}
+
+\begin{fmbox}
+\dochead{Report from 2015 Brainhack Americas (LA)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% Enter the title of your article here     %%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Facilitating Big Data Meta-Analyses for Clinical Neuroimaging through ENIGMA Wrapper Scripts}
+\vskip2ex
+\projectURL{Project URL: \url{https://github.com/npnl/ENIGMA-Wrapper-Scripts}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% Enter the authors' addresses here        %%
+%%                                          %%
+%% Repeat \address commands as much as      %%
+%% required.                                %%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\author[
+addressref={aff1,aff2}
+]{\inits{EK} \fnm{Eric} \snm{Kan}}
+\author[
+addressref={aff3}
+]{\inits{JA} \fnm{Julia} \snm{Anglin}}
+\author[
+addressref={aff4}
+]{\inits{MB} \fnm{Michael} \snm{Borich}}
+\author[
+addressref={aff5}
+]{\inits{NJ} \fnm{Neda} \snm{Jahanshad}}
+\author[
+addressref={aff5}
+]{\inits{PT} \fnm{Paul} \snm{Thompson}}
+\author[
+addressref={aff3},
+corref={aff3},
+email={sliew@chan.usc.edu}
+]{\inits{SLL} \fnm{Sook-Lei} \snm{Liew}}
+
+
+\address[id=aff1]{%
+  \orgname{The Saban Research Institute of Children's Hospital},
+  \city{Los Angeles},
+  \street{4661 Sunset Blvd., MS \#84},
+  \postcode{90027},
+  \state{California},
+  \cny{USA}
+}
+\address[id=aff2]{%
+  \orgname{Department of Pediatrics of the Keck School of Medicine, University of Southern California},
+  \city{Los Angeles},
+  \street{4650 Sunset Blvd., MS \#71},
+  \postcode{90027},
+  \state{California},
+  \cny{USA}
+}
+\address[id=aff3]{%
+  \orgname{Neural Plasticity and Neurorehabilitation Laboratory, Chan Division of
+Occupational Science and Occupational Therapy, Division of
+Biokinesiology and Physical Therapy, Keck School of Medicine Department
+of Neurology, University of Southern California},
+  \city{Los Angeles},
+  \street{1540 Alcazar Street, CHP 133 MC 9003},
+  \postcode{90089},
+  \state{California},
+  \cny{USA}
+}
+\address[id=aff4]{%
+  \orgname{Division of Physical Therapy, Department of Rehabilitation Medicine, Emory University School of Medicine},
+  \city{Atlanta},
+  \street{1462 Clifton Rd N.E. Suite 312},
+  \postcode{30322},
+  \state{Georgia},
+  \cny{USA}
+}
+\address[id=aff5]{%
+  \orgname{Imaging Genetics Center, Mark and Mary Stevens Institute for Neuroimaging and Informatics, Keck School of Medicine, University of Southern California,University of Southern California},
+  \city{Marina del Rey},
+  \street{4676 Admiralty Way},
+  \postcode{90292},
+  \state{California},
+  \cny{USA}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% Enter short notes here                   %%
+%%                                          %%
+%% Short notes will be after addresses      %%
+%% on first page.                           %%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{artnotes}
+\end{artnotes}
+
+%\end{fmbox}% comment this for two column layout
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% The Abstract begins here                 %%
+%%                                          %%
+%% Please refer to the Instructions for     %%
+%% authors on http://www.biomedcentral.com  %%
+%% and include the section headings         %%
+%% accordingly for your article type.       %%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\begin{abstractbox}
+
+%\begin{abstract} % abstract
+	
+%Blank Abstract
+
+%\end{abstract}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% The keywords begin here                  %%
+%%                                          %%
+%% Put each keyword in separate \kwd{}.     %%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\vskip1ex
+
+%URL is missing}
+%URL is missing}
+
+% MSC classifications codes, if any
+%\begin{keyword}[class=AMS]
+%\kwd[Primary ]{}
+%\kwd{}
+%\kwd[; secondary ]{}
+%\end{keyword}
+
+%\end{abstractbox}
+%
+\end{fmbox}% uncomment this for twcolumn layout
+
+\end{frontmatter}
+
+%{\sffamily\bfseries\fontsize{10}{12}\selectfont Project URL: \url{}}
+
+\begin{table*}
+\caption {Description of scripts.} \label{tab:scripts}
+  \begin{tabular}{p{4cm}p{6cm}p{4cm}}
+    Scripts  & Description  &  Execution Time \\
+      \hline\noalign{\smallskip}
+      1\_enigma\_runfreesurfer.sh     &    Runs freesurfer      &    ~12-16 hours per subject    \\
+      2\_extractsubcortical\_volumes.sh     &    Extracts freesurfer data and runs the quality checks for subcortical analyses      &    ~30 min per 27 subjects   \\
+      3\_extractcortical\_volumes.sh     &    Extracts freesurfer data and runs the quality checks for cortical analyses     &     ~30 min per 27 subjects   \\
+      \noalign{\smallskip}\hline
+\end{tabular}
+\end{table*}
+
+\begin{table*}
+	\caption {User feedback.} \label{tab:feedback}
+\begin{tabular}{p{2cm}p{.5cm}p{1cm}p{6cm}}
+  User Level  & EOU & Time & Notes \\
+    \hline\noalign{\smallskip}
+  Novice 1     &     8     &     00:35:25     &     Required walk through support   \\
+  Novice 2     &     8     &     00:52:55     &     Required support for basic terminal commands only; then was able to complete independently   \\
+  Moderate 1     &     3     &     00:23:45     &     Required no support   \\
+  Moderate 2     &     4     &     00:22:10     &     Required no support   \\
+  Expert 1     &     3     &     00:11:34     &     Required no support   \\
+  Expert 2 - DE    &     3     &     02:00:00     &     Getting scripts to run took several minutes but reorganizing data and troubleshooting with freesurfer took significant time   \\ 
+  Expert 3 - DE     &     2     &     01:15:00     &     Required walk through support   \\ 
+  \noalign{\smallskip}\hline
+\end{tabular}\\
+EOU: Ease of Use score (1-10) 1 = easiest, 10 = hardest. Time: the time it took for\\
+the user to setup and learn to use the scripts. DE: User's expertise is with a
+different\\ computational environment than the one required by the scripts.
+
+\end{table*}
+
+%%% Import the body from pandoc formatted text
+\section{Introduction}\label{introduction}
+
+A vast number of clinical disorders may involve changes in brain structure that are correlated with cognitive function and behavior (e.g., depression, schizophrenia, stroke, etc.). Reliably understanding the relationship between specific brain structures and relevant behaviors in worldwide clinical populations could dramatically improve healthcare decisions around the world. For instance, if a reliable relationship between brain structure after stroke and functional motor ability was established, brain imaging could be used to predict prognosis/recovery potential for individual patients. However, high heterogeneity in clinical populations in both individual neuroanatomy and behavioral outcomes make it difficult to develop accurate models of these potentially subtle relationships.
+
+Large neuroimaging studies ($n>10,000$) would provide unprecedented power to successfully relate clinical neuroanatomy changes with behavioral measures. While these sample sizes might be difficult for any one individual to collect, the ENIGMA Center for WorldwideMedicine, Imaging, and Genomics has successfully pioneered meta- and mega-analytic methods to accomplish this task. ENIGMA brings together a global alliance of over 500 international researchers from over 35 countries to pool together neuroimaging data on different disease states in hopes of discovering critical brain-behavior relationships (\url{http://enigma.ini.usc.edu}) \cite{Thompson2015,Hibar2015}. Individual investigators with relevant data run ENIGMA analysis protocols on their own data and send back an output folder containing the analysis results to be combined with data from other sites for a meta-analysis. In this way, large sample sizes can be acquired without the hassle of large-scale data transfers or actual neuroimaging data sharing.
+
+ENIGMA protocols were initially developed to harmonize processing methods of imaging researchers around the world and they require a moderate level of familiarity with several programming languages and environments. However, ENIGMA's recent success has attracted greater interest in collaborative neuroimaging and protocols must be adjusted to allow for all levels of experience, as, the success of this approach depends on individual collaborators running these ENIGMA protocols on their data. Here, we worked on simplifying these protocols so even a novice programmer could use them. In this way, we hope to expand the feasibility of collecting critical clinical data from collaborators who may have less experience with neuroimaging techniques.
+
+\section{Approach}\label{approach}
+
+The current ENIGMA protocols \url{(http://enigma.ini.usc.edu/protocols/)} for structural neuroimaging analyses consist of a number of different word documents with embedded links to different scripts and snippets of code that use R \cite{rmanual}, Bash scripting \cite{bashmanual}, Matlab \cite{MATLAB:2010}, FSL \cite{jenkinson2012}, and Freesurfer \cite{fischl2012}. Each step must be run sequentially, costing the user time during the implementation to wait for each step to finish before beginning the next. In addition, the number of different scripts, programming languages and software environments can be challenging for a novice user and introduces numerous instances where the individual may make errors in implementing the code. To address this, we created 3 easy-to-use wrapper scripts that automate the implementation of the ENIGMA protocols for both subcortical and cortical structural MRI analyses (see Table \ref{tab:scripts}). These wrapper scripts reduce over 40 steps down to 3 quick steps for the user. We also created a user-friendly readme file that includes screenshots of the code implementation.
+
+To examine the ease of use and time to implement the new scripts, we tested each of them on 7 users who had different levels of familiarity with programming and neuroimaging (novice users (no programming experience), moderate users (basic-to-intermediate programming experience), and expert users (extensive programming)). To explore additional factors relating to implementation, two of the expert users had to use the scripts in a different environment (e.g., organize the data, install the software, etc.).
+
+\section{Results/Discussion}\label{resultsdiscussion}
+
+Overall, moderate and expert level users found the scripts extremely easy to implement and required less than 25 minutes to get all three scripts running (excluding the run time of each script; see \ref{tab:title} for individual results). The two novice users required greater support to understand basic elements (e.g., what is a terminal), but with support, were able to complete all the steps in less than 1 hour. Finally, the expert users who implemented the scripts on their own environment found the most time-consuming steps to be installing and troubleshooting Freesurfer (e.g., install errors; troubleshooting a conflict between the preset Freesurfer subjects directory and the output directory required by the scripts) and reorganizing data into a format for the scripts (e.g., putting the data into an organized format with main\_folder/subject\_folder/subject.nii.gz). Once these steps were complete, each expert user reported about 10 minutes for script implementation.
+
+The wrapper scripts made the implementation of the ENIGMA protocols quick and feasible even for novice users. However, there were still three main barriers to participation that required significant time, computational resources, and some expertise: 1) data organization (depending on previous data structure), 2) running freesurfer (\textasciitilde{}12 hrs/subj), and 3) installation of the required software (e.g., Freesurfer, FSL, R). Future projects may look at ways to streamline these areas for a more seamless user experience in order to facilitate greater sharing of clinical neuroimaging data through ENIGMA.
+
+All scripts and user guides can be found at: \url{https://github.com/npnl/ENIGMA-Wrapper-Scripts}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                                          %%
+%% Backmatter begins here                   %%
+%%                                          %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{backmatter}
+
+\section*{Availability of Supporting Data}
+\emph{Can provide a test dataset on request; if interested, please email npnl@usc.edu.} 
+
+\section*{Competing interests}
+\emph{None.}
+
+\section*{Author's contributions}
+\emph{Eric Kan, Julia Anglin, and Sook-Lei Liew wrote the wrapper scripts. Neda Jahanshad and Paul Thompson developed the original ENIGMA protocols and provide guidance/support for ENIGMA working groups. Michael Borich, Julia Anglin, and Sook-Lei Liew tested and edited the wrapper scripts. All authors contributed to the creation of the manuscript.}
+
+\section*{Acknowledgements}
+\emph{The authors would like to thank the organizers and attendees of Brainhack LA and our testers.}
+
+  
+  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%                  The Bibliography                       %%
+%%                                                         %%
+%%  Bmc_mathpys.bst  will be used to                       %%
+%%  create a .BBL file for submission.                     %%
+%%  After submission of the .TEX file,                     %%
+%%  you will be prompted to submit your .BBL file.         %%
+%%                                                         %%
+%%                                                         %%
+%%  Note that the displayed Bibliography will not          %%
+%%  necessarily be rendered by Latex exactly as specified  %%
+%%  in the online Instructions for Authors.                %%
+%%                                                         %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% if your bibliography is in bibtex format, use those commands:
+
+\bibliographystyle{bmc-mathphys} % Style BST file
+\bibliography{enigma_report_references} % Bibliography file (usually '*.bib' )
+
+\end{backmatter}
+\end{document}
